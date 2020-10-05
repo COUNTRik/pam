@@ -22,8 +22,8 @@ echo "*;*;!vagrant;Wd0000-2400"
 
 # Добавим параметры в /etc/pam.d/login
 # Также добавим для наглядности и проверки на стенде vagrant этиже параметры в /etc/pam.d/sshd
-echo "account    required     pam_time.so" | sed 'a\account    required     pam_nologin.so'
-echo "account [default=ignore success=1] pam_succeed_if.so  user ingroup admin" | sed 'a\account    required     pam_nologin.so'
+sed '7a\account    required     pam_time.so' /etc/pam.d/login 
+sed '7a\account [default=ignore success=1] pam_succeed_if.so  user ingroup admin' 
 
 
 
